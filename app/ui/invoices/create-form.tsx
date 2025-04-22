@@ -125,6 +125,7 @@ export default function Form({
                 </label>
 
               </div>
+            </div>
               <div id="status-error" aria-live="polite" aria-atomic="true">
   {state.errors?.status &&
     state.errors.status.map((error: string) => (
@@ -133,7 +134,11 @@ export default function Form({
       </p>
     ))}
 </div>
-            </div>
+{state.message && (
+  <p className="mb-4 text-sm text-red-500">
+    {state.message}
+  </p>
+)}
           </div>
         </fieldset>
       </div>
